@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelUserStore">
+    <attachedFolders />
+    <explicitIncludes>
+      <Path>.idea</Path>
+      <Path>Project.App</Path>
+      <Path>Project.Data</Path>
+      <Path>Project.IntegrationTests</Path>
+      <Path>Project.Migration</Path>
+      <Path>Project.UnitTests</Path>
+    </explicitIncludes>
+    <explicitExcludes />
+  </component>
+</project>
