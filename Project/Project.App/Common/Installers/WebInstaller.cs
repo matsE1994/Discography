@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using FluentValidation.AspNetCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Project.App.Common.Installers
@@ -7,7 +8,14 @@ namespace Project.App.Common.Installers
     {
         public void Install(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddControllers();
+            services.AddControllers()
+                .AddFluentValidation(fv
+                    =>
+                {
+                    fv.RunDefaultMvcValidationAfterFluentValidationExecutes = false;
+                    fv.RegisterValidatorsFromAssemblyContaining<Startup>();
+                    fv.ImplicitlyValidateChildProperties = true;
+                });
         }
     }
 }

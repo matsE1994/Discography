@@ -10,6 +10,7 @@ using Project.App.MainObject1Module.Contracts;
 namespace Project.App.MainObject1Module
 {
     [Controller]
+    [ValidateModelState]
     public class MainObject1Controller : Controller
     {
         private readonly IMediator _mediator;
@@ -24,8 +25,7 @@ namespace Project.App.MainObject1Module
         [HttpGet(ApiRoutes.MainObject1.Get)]
         public async Task<IActionResult> Get()
         {
-            var domainObjects = await _mediator.Send(new MainObject1GetRequest());
-            var responseObjects = _mapper.Map<List<MainObject1Response>>(domainObjects);
+            var responseObjects = await _mediator.Send(new MainObject1GetRequest());
             return Ok(responseObjects);
         }
 
