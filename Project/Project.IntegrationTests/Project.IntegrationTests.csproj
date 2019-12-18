@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <AssemblyName>Project.IntegrationTests</AssemblyName>
+        <RootNamespace>Project.IntegrationTests</RootNamespace>
+        <Authors>Mats Ramberg Edvardsen</Authors>
+        <LangVersion>8.0</LangVersion>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentAssertions" Version="5.9.0" />
+      <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="3.0.0" />
+      <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="3.0.0" />
+      <PackageReference Include="xunit" Version="2.4.1" />
+      <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Project.App\Project.App.csproj" />
+    </ItemGroup>
+
+</Project>
